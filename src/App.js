@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-// import './App.css';
+
+import InputText from './components/form/InputText'
+import checkbox from './components/form/Checkbox'
+import RadioButton from './components/form/RadioButtom'
+import Select from './components/form/Select'
+
 
 class App extends Component {
   constructor(){
