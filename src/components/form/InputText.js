@@ -1,8 +1,17 @@
 import React from 'react'
 
 
-export default class InputText extends React.Component{
-    render(){
-        return <input type="text"/>
-    }
+const InputText = (props) => {
+    return (
+        <div>
+            <label for={props.name}>{props.label}</label>
+            <input type="text" 
+                name={props.name} 
+                value={props.value} 
+                onChange={props.onChange}
+            />
+        </div>
+    );
 }
+
+export default InputText;
