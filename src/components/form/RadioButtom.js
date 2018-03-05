@@ -11,7 +11,7 @@ const RadioButton = (props) => {
                 value={props.value} 
                 checked={props.checked}
             />
-            <label for={props.value}>{props.label}</label>
+            <label>{props.label}</label>
         </div>
     );
 }

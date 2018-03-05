@@ -4,6 +4,8 @@ import InputText from './components/form/InputText'
 import Checkbox from './components/form/Checkbox'
 import RadioButton from './components/form/RadioButtom'
 import Select from './components/form/Select'
+import CheckboxList from './components/form/CheckboxList'
+import { languagesOptions } from './constants';
 
 
 class App extends Component {
@@ -53,6 +55,7 @@ class App extends Component {
     this.setState({ server: value });
   }
 
+
   render() {
     return (
       <div>
@@ -66,23 +69,12 @@ class App extends Component {
             label="Projeto"/>
           
           <label>Linguagens do projeto:</label><br/>
-          <Checkbox name="linguagens[]" 
-            onChange={this.onLangChange}
-            value="python"
-            checked={this.state.linguagens.python}
-            label="Python (Django - Flask)"/>
-
-          <Checkbox name="linguagens[]" 
-            onChange={this.onLangChange}
-            value="nodejs"
-            checked={this.state.linguagens.nodejs}
-            label="Node.js"/>
-
-          <Checkbox name="linguagens[]" 
-            onChange={this.onLangChange}
-            value="php"
-            checked={this.state.linguagens.php}
-            label="PHP (Synfony)"/>
+          <CheckboxList
+            name="linguagens[]"
+            options = {languagesOptions}
+            onChange = {this.onLangChange}
+            checkedOptions = {this.state.linguagens}
+          />
 
           <label>Deploy:</label><br/>
            <RadioButton name="deploy" 
