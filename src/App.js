@@ -65,8 +65,6 @@ class App extends Component {
             onChange={this.onNameChange}
             label="Projeto"/>
           
-          
-          
           <label>Linguagens do projeto:</label><br/>
           <Checkbox name="linguagens[]" 
             onChange={this.onLangChange}
@@ -87,7 +85,6 @@ class App extends Component {
             label="PHP (Synfony)"/>
 
           <label>Deploy:</label><br/>
-
            <RadioButton name="deploy" 
             onChange={this.onDeployChange}
             value="prod"
