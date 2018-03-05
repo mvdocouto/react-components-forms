@@ -9,10 +9,8 @@ const RadioButtomList = (props) => {
     */
 
     const radioButtons = props.options.map(options => {
-        // console.log(props);
-        return (
-            
-            <RadioButtom
+         return (
+             <RadioButtom
             key={options.id}
             name={props.name}
             value={options.value}
@@ -20,8 +18,6 @@ const RadioButtomList = (props) => {
             onChange={props.onChange}
             checked={props.checkedOptions === options.value}
             />
-
-         
         );
     });
 

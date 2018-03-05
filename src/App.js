@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import InputText from './components/form/InputText'
-import RadioButton from './components/form/RadioButtom'
 import Select from './components/form/Select'
 import CheckboxList from './components/form/CheckboxList'
-import { languagesOptions } from './constants';
+import RadioButtonList from './components/form/RadioButtomList'
+import { languagesOptions, deployOptions, serverOptions } from './constants';
 
 
 class App extends Component {
@@ -19,12 +19,12 @@ class App extends Component {
       },
       deploy: 'stg',
       server: ''
-
     }
   }
 
   onNameChange = (event) => {
-    this.setState({ projeto: event.target.value});
+    const { value } = event.target;
+    this.setState({ projeto: value});
   }
 
   onLangChange = (event) => {
@@ -76,22 +76,18 @@ class App extends Component {
           />
 
           <label>Deploy:</label><br/>
-           <RadioButton name="deploy" 
-            onChange={this.onDeployChange}
-            value="prod"
-            checked={this.state.deploy === "prod"}
-            label="Produção"/>
-
-          <RadioButton name="deploy" 
-            onChange={this.onDeployChange}
-            value="stg"
-            checked={this.state.deploy === "stg"}
-            label="Stage"/>
+          <RadioButtonList
+            name="deploy"
+            options = {deployOptions}
+            onChange = {this.onDeployChange}
+            checkedOptions = {this.state.deploy}
+          />
 
           <Select
             onChange={this.onServerChange}
             name="server"
-            label="Servidor"/> 
+            label="Servidor"
+            options={serverOptions}/>
           
           <button type="submit">Processar</button>
         </form>

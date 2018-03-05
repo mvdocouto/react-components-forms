@@ -1,19 +1,24 @@
 import React from 'react'
 
 
-const RadioButton = (props) => {
+const Select = (props) => {
+
+  const choices = props.options.map(options => {
+    return (
+      <option valeu={options.value}>{options.label}</option>
+   );
+});
+
     return (
         <div>
           <label>{props.label}</label><br/>
           <select 
             name={props.name} 
             onChange={props.onChange}>
-            <option valeu=""></option>
-            <option value="server_1">Server 1</option>
-            <option value="server_2">Server 2</option>
-          </select>           
+            {choices}
+          </select>
         </div>
     );
 }
 
-export default RadioButton;
+export default Select;
