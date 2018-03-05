@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import InputText from './components/form/InputText'
-import Checkbox from './components/form/Checkbox'
 import RadioButton from './components/form/RadioButtom'
 import Select from './components/form/Select'
 import CheckboxList from './components/form/CheckboxList'
